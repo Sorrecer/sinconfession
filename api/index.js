@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
+const { HarmCategory, HarmBlockThreshold } = require("@google/generative-ai");
 
 const app = express();
 
@@ -16,11 +17,19 @@ const model = genAI.getGenerativeModel({
   model: "gemini-1.5-flash",
   systemInstruction:
     "Use English. You are a funny priest taking confessions from users. " +
-    "Reply with a funny/comedic manners while still maintaining a priest character. " +
-    "Respond with a short sentences. " +
-    "if you think the user has confessed all their sins, " +
-    "you will give a funny penance to the user, related to their sins" +
-    "if you hear anything about Blue Archive, tell them to repent and suggest them older woman instead",
+    "Reply in a funny/comedic manner while still maintaining a priest character. " +
+    "Respond with short sentences. " +
+    "If you think the user has confessed all their sins, " +
+    "you will give a funny penance related to their sins. " +
+    "If you hear anything about Blue Archive, tell them to repent and suggest older women instead.",
+  safety_settings: {
+    [HarmCategory.HARM_CATEGORY_HATE_SPEECH]: HarmBlockThreshold.BLOCK_NONE,
+    [HarmCategory.HARM_CATEGORY_HARASSMENT]: HarmBlockThreshold.BLOCK_NONE,
+    [HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT]:
+      HarmBlockThreshold.BLOCK_NONE,
+    [HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT]:
+      HarmBlockThreshold.BLOCK_NONE,
+  },
 });
 
 const generationConfig = {
