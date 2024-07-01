@@ -315,7 +315,7 @@ h1 {
 
 /* Media query untuk perangkat dengan lebar maksimum 768px (mobile) */
 @media (max-width: 768px) {
-  #chatbox {
+  #chat-widget {
     width: 100%; /* Lebar penuh untuk perangkat mobile */
   }
 }
