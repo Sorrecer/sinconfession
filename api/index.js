@@ -40,6 +40,9 @@ const generationConfig = {
   responseMimeType: "text/plain",
 };
 
+// Simpan riwayat di sini (gunakan database atau mekanisme penyimpanan lain untuk produksi)
+let chatHistory = [];
+
 app.post("/api/chat", async (req, res) => {
   const { message } = req.body;
 
@@ -50,9 +53,16 @@ app.post("/api/chat", async (req, res) => {
   console.log(`Received message: ${message}`);
 
   try {
-    const chatSession = model.startChat({ generationConfig, history: [] });
+    // Buat sesi obrolan dengan riwayat yang ada
+    const chatSession = model.startChat({
+      generationConfig,
+      history: chatHistory,
+    });
     const result = await chatSession.sendMessage(message);
     const responseText = await result.response.text();
+
+    // Tambahkan pesan dan tanggapan ke riwayat
+    chatHistory.push({ user: message, bot: responseText });
 
     console.log("AI response:", responseText);
     res.json({ response: responseText });
