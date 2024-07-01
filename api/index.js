@@ -5,7 +5,6 @@ const bodyParser = require("body-parser");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 const app = express();
-const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "..", "public")));
@@ -27,7 +26,7 @@ const generationConfig = {
   responseMimeType: "text/plain",
 };
 
-app.post("/chat", async (req, res) => {
+app.post("/api/chat", async (req, res) => {
   const { message } = req.body;
 
   if (!message) {
@@ -49,6 +48,5 @@ app.post("/chat", async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
-});
+// Export the serverless function
+module.exports = app;

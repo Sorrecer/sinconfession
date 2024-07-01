@@ -10,7 +10,7 @@ $(document).ready(function () {
       scrollToBottom();
 
       $.ajax({
-        url: "/chat",
+        url: "/api/chat",
         method: "POST",
         contentType: "application/json",
         data: JSON.stringify({ message }),

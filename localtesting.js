@@ -31,7 +31,7 @@ const generationConfig = {
   responseMimeType: "text/plain",
 };
 
-app.post("/chat", async (req, res) => {
+app.post("/api/chat", async (req, res) => {
   const { message } = req.body;
 
   if (!message) {
