@@ -312,3 +312,10 @@ h1 {
   color: #888;
   z-index: 999; /* Ensure it stays above other elements */
 }
+
+/* Media query untuk perangkat dengan lebar maksimum 768px (mobile) */
+@media (max-width: 768px) {
+  #chatbox {
+    width: 100%; /* Lebar penuh untuk perangkat mobile */
+  }
+}

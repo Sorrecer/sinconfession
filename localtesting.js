@@ -2,9 +2,11 @@ require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
+const { GoogleGenerativeAI } = require("@google/generative-ai");
 const { HarmCategory, HarmBlockThreshold } = require("@google/generative-ai");
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "..", "public")));
