@@ -1,0 +1,370 @@
+.noto-sans-bold {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+/* Regular */
+.noto-sans-regular {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+/* Thin */
+.noto-sans-thin {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.noto-sans-title {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 700; /* Berat font tebal untuk judul */
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.noto-sans-paragraph {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400; /* Berat font reguler untuk paragraf */
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  text-align: justify;
+}
+
+body {
+  background-image: url("/bg2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: #e5e7eb; /* Light text color for dark background */
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+  font-family: "Gram Bold", Arial, sans-serif;
+}
+
+/* Footer */
+footer {
+  background-color: rgba(
+    34,
+    34,
+    34,
+    0.1
+  ); /* Dark semi-transparent background */
+  color: #e5e7eb; /* Light text color */
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Deeper shadow */
+  text-align: center;
+  margin: auto;
+}
+
+/* Chat Widget */
+#chat-widget {
+  position: fixed;
+  width: 50%;
+  height: 85%; /* Adjust height as needed */
+  background-color: rgba(42, 42, 42, 0.8);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  transition: transform 0.3s ease-in-out; /* Smooth transition for centering */
+  z-index: 1000;
+  overflow: hidden;
+
+  /* Centering */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Chat Header */
+#chat-header {
+  background-color: #545454;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 5px;
+}
+/* Style for the prayer icon */
+.prayer-icon {
+  width: 24px; /* Adjust size as needed */
+  height: 24px;
+  margin-right: 8px; /* Space between icon and text */
+  vertical-align: middle; /* Align icon vertically with text */
+}
+
+#close-chat {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Chat Body */
+#chat-body {
+  height: 100%; /* Full height of parent container */
+  overflow-y: auto; /* Scrollable if content exceeds height */
+  padding: 10px;
+  color: #e5e7eb;
+}
+
+@keyframes cta {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Input Container */
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-top: 2px solid #4a4a4a;
+}
+
+/* Loader Styles */
+.loader {
+  text-align: center;
+}
+.loader span {
+  display: inline-block;
+  vertical-align: middle;
+  width: 10px;
+  height: 10px;
+  margin: 2px;
+  background: grey;
+  border-radius: 50%;
+  animation: loader 0.5s infinite alternate;
+}
+.loader span:nth-of-type(2) {
+  animation-delay: 0.2s;
+}
+.loader span:nth-of-type(3) {
+  animation-delay: 0.3s;
+}
+@keyframes loader {
+  0% {
+    height: 10px;
+    opacity: 0.9;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0.3;
+    transform: translateY(-11px);
+  }
+}
+
+/* Suggestion Buttons */
+.suggestion-buttons {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: rgba(44, 44, 44, 0.5);
+  z-index: 10;
+}
+
+.suggestion-button {
+  background-color: rgba(44, 44, 44, 0.5);
+  color: white;
+  border: 1px solid #494949;
+  padding: 10px 15px;
+  margin: 5px 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 100px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 60%; /* Menggunakan 90% untuk memastikan tombol mengisi ruang dengan baik */
+  text-align: center;
+  position: relative; /* Position relative for emoji positioning */
+}
+
+.suggestion-button:hover {
+  background-color: #4c4c4c;
+}
+
+.suggestion-button:active {
+  background-color: #8f8f8f;
+}
+
+.emoji {
+  position: absolute;
+  top: -20px; /* Adjust this value to position the emoji above the text */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px; /* Adjust the size as needed */
+}
+
+/* Chatbox Adjustments */
+#chatbox {
+  height: calc(
+    85% - 60px
+  ); /* Adjust height to accommodate suggestion buttons */
+  overflow-y: auto;
+  background-color: rgba(44, 44, 44, 1);
+  padding: 10px;
+  margin-top: 10px; /* Space for suggestion buttons */
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column; /* Change to column to make new messages appear at the bottom */
+}
+
+.chat-bubble {
+  max-width: 75%;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 10px;
+  word-wrap: break-word;
+  clear: both;
+  animation: slideUp 0.3s ease-in-out; /* Add slide up animation */
+}
+
+.user-bubble {
+  align-self: flex-end;
+  background-color: #6200ea;
+  color: #ffffff;
+  border-bottom-right-radius: 0px;
+}
+
+.bot-bubble {
+  align-self: flex-start;
+  background-color: #333;
+  color: #e0e0e0;
+  border-bottom-left-radius: 0px;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Additional Styling */
+.chat-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #1e1e1e;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#user-input {
+  width: calc(100% - 80px);
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-right: 10px;
+}
+
+#send-button {
+  width: 60px;
+  padding: 10px;
+  background: #6200ea;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#send-button:hover {
+  background: #3700b3;
+}
+
+.jello:hover {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-color: #03e6ff;
+  -webkit-animation: 0.9s both jello-vertical;
+  animation: 0.9s both jello-vertical;
+}
+
+@-webkit-keyframes jello-vertical {
+  0%,
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(0.85, 1.15, 1);
+    transform: scale3d(0.85, 1.15, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+}
+
+@keyframes jello-vertical {
+  0%,
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(0.85, 1.15, 1);
+    transform: scale3d(0.85, 1.15, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+}

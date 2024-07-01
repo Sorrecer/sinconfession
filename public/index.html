@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confess Your Sins</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <!-- Chat Widget -->
+    <div id="chat-widget" class="hidden">
+      <div id="chat-header" class="noto-sans-bold">
+        <img src="prayer-icon.png" alt="Prayer Icon" class="prayer-icon" />
+        <span>Confess Your Sins</span>
+      </div>
+
+      <!-- Suggestion Buttons -->
+      <div id="suggestion-buttons" class="suggestion-buttons">
+        <button class="suggestion-button noto-sans-bold">
+          I used my phone during a meeting
+        </button>
+        <button class="suggestion-button noto-sans-bold">
+          I secretly took the last slice of pizza and blamed it on the dog
+        </button>
+        <button class="suggestion-button noto-sans-bold">
+          I let autocorrect take the blame for my typos in text messages
+        </button>
+      </div>
+
+      <div id="chatbox" class="noto-sans-bold"></div>
+      <div class="input-container noto-sans-bold">
+        <input
+          type="text"
+          id="user-input"
+          placeholder="Confess Your Sins Here.."
+        />
+        <button id="send-button">Send</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="chatscript.js"></script>
+  </body>
+</html>

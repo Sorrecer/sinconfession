@@ -1,0 +1,13 @@
+{
+  "name": "confessyoursins",
+  "version": "1.0.0",
+  "description": "web app to confess your sins",
+  "main": "localtesting.js",
+  "author": "Kenny Anaga",
+  "license": "ISC",
+  "dependencies": {
+    "@google/generative-ai": "^0.13.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
