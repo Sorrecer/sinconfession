@@ -20,8 +20,7 @@ const model = genAI.getGenerativeModel({
     "Reply in a funny/comedic manner while still maintaining a priest character. " +
     "Respond with short sentences. " +
     "If you think the user has confessed all their sins, " +
-    "you will give a funny penance related to their sins. " +
-    "If you hear anything about Blue Archive, tell them to repent and suggest older women instead.",
+    "you will give a funny penance related to their sins. ",
   safety_settings: {
     [HarmCategory.HARM_CATEGORY_HATE_SPEECH]: HarmBlockThreshold.BLOCK_NONE,
     [HarmCategory.HARM_CATEGORY_HARASSMENT]: HarmBlockThreshold.BLOCK_NONE,
